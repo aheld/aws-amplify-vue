@@ -4,7 +4,7 @@
         <v-app>
         <v-container fluid>
             <v-switch
-                :label="`${msg.toString()}`" 
+                :label="`${msg.toString()}`"
                 v-model="switch1"
                 color="blue"
                 :disabled="loading"
@@ -12,7 +12,7 @@
         </v-container>
         </v-app>
     </div>
-  
+
 </template>
 
 
@@ -48,15 +48,23 @@ export default {
                     this.loading = !this.loading;
                 })
 
-            }   
+            }
         }
     }
 }
 
+import { API } from 'aws-amplify'
+
 var callUpdate = function(newValue) {
-    return new Promise(function(resolve, reject) {
-        setTimeout(resolve, 2000, newValue);
-    })
+  console.log(newValue)
+
+  return API.get('params', '/params')
+
 }
+// var callUpdate = function(newValue) {
+//     return new Promise(function(resolve, reject) {
+//         setTimeout(resolve, 2000, newValue);
+//     })
+// }
 </script>
 
