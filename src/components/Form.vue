@@ -7,7 +7,6 @@
                 :label="`${msg.toString()}`"
                 v-model="switch1"
                 color="blue"
-                :disabled="loading"
             ></v-switch>
         </v-container>
         </v-app>
@@ -26,7 +25,6 @@ export default {
         return {
             txt: "Sample form",
             msg: "Click to save",
-            loading: false
         }
     },
     computed: {
@@ -35,19 +33,13 @@ export default {
                 return TestStore.state.autoApprove
             },
             set (newValue) {
-                this.loading = !this.loading;
-
                 callUpdate(newValue)
-                .then((data) => {
-                    TestStore.commit('setParam', data)
-                    console.log("return : " + data)
-                    this.loading = !this.loading;
+                .then((response) => {
+                    TestStore.commit('setParam', JSON.stringify(response.body.Parameter.Value))
                 })
                 .catch((error) => {
                     console.log(error)
-                    this.loading = !this.loading;
                 })
-
             }
         }
     }
@@ -55,16 +47,17 @@ export default {
 
 import { API } from 'aws-amplify'
 
-var callUpdate = function(newValue) {
+async function callUpdate(newValue) {
   console.log(newValue)
-
-  return API.get('params', '/params')
-
+  let myInit = {
+      body: {
+          "Parameter" : {
+              "Value": newValue
+          }
+      }
+  }
+  return await API.put('params', '/params', myInit )
+    
 }
-// var callUpdate = function(newValue) {
-//     return new Promise(function(resolve, reject) {
-//         setTimeout(resolve, 2000, newValue);
-//     })
-// }
-</script>
 
+</script>

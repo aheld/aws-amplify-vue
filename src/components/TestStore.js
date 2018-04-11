@@ -8,8 +8,9 @@ const store = new Vuex.Store({
     autoApprove : true
   },
   mutations: {
-    setParam(state, autoApprove) {
-      state.autoApprove = autoApprove
+    setParam(state, value) {
+      //console.log("update autoApprove to " + value)
+      state.autoApprove = (value == 'true')
     }
   }
 })
