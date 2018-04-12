@@ -122,8 +122,7 @@ export default {
   name: 'goMenu',
   data () {
     return {
-      drawer: null,
-      userImg: getImg()
+      drawer: null
     }
   },
   props: {
