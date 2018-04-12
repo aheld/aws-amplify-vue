@@ -5,6 +5,7 @@ features:
   cloudlogic: !com.amazonaws.mobilehub.v0.CloudLogic 
     components:
 <<<<<<< HEAD
+<<<<<<< HEAD
       gopuff-admin-backend: !com.amazonaws.mobilehub.v0.API 
         attributes:
           api-arn: 'arn:aws:execute-api:us-east-1:663337099874:35qo80rs79'
@@ -14,6 +15,8 @@ features:
         paths:
           /params: !com.amazonaws.mobilehub.v0.Function {}
 =======
+=======
+>>>>>>> 8ac04aefabac9d58a4d17fd9ef1ae1ff48b88b37
       params: !com.amazonaws.mobilehub.v0.API 
         attributes:
           name: params
@@ -46,6 +49,9 @@ features:
             runtime: nodejs6.10
             timeout: '3'
             version: cXYHjcYIb_5y72khH__rKqJAfzWCyIxb
+<<<<<<< HEAD
+>>>>>>> 8ac04aefabac9d58a4d17fd9ef1ae1ff48b88b37
+=======
 >>>>>>> 8ac04aefabac9d58a4d17fd9ef1ae1ff48b88b37
   content-delivery: !com.amazonaws.mobilehub.v0.ContentDelivery 
     attributes:

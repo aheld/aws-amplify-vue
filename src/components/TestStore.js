@@ -10,6 +10,7 @@ const store = new Vuex.Store({
   },
   mutations: {
 <<<<<<< HEAD
+<<<<<<< HEAD
     setParam(state, newValue) {
       const value = { response: true }
       API.get("gopuff-admin-backend", "/params").then(response => {
@@ -17,6 +18,11 @@ const store = new Vuex.Store({
       });
       //const result = API.post('gopuff-admin-backend', '/params', newValue)
       //this.autoApprove = result
+=======
+    setParam(state, value) {
+      //console.log("update autoApprove to " + value)
+      state.autoApprove = (value == 'true')
+>>>>>>> 8ac04aefabac9d58a4d17fd9ef1ae1ff48b88b37
 =======
     setParam(state, value) {
       //console.log("update autoApprove to " + value)

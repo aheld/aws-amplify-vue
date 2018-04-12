@@ -35,6 +35,7 @@ export default {
             },
             set (newValue) {
 <<<<<<< HEAD
+<<<<<<< HEAD
                 this.loading = !this.loading;
                 this.msg = "Saving"
 
@@ -51,6 +52,16 @@ export default {
                     this.msg = "Click to save"
                 })
             }   
+=======
+                callUpdate(newValue)
+                .then((response) => {
+                    TestStore.commit('setParam', JSON.stringify(response.body.Parameter.Value))
+                })
+                .catch((error) => {
+                    console.log(error)
+                })
+            }
+>>>>>>> 8ac04aefabac9d58a4d17fd9ef1ae1ff48b88b37
 =======
                 callUpdate(newValue)
                 .then((response) => {
