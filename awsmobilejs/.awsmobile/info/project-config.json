@@ -1,0 +1,10 @@
+{
+	"SourceDir": "src",
+	"DistributionDir": "dist",
+	"BuildCommand": "npm run-script build",
+<<<<<<< HEAD
+	"StartCommand": "npm run-script serve"
+=======
+	"StartCommand": "npm run-script start"
+>>>>>>> 8ac04aefabac9d58a4d17fd9ef1ae1ff48b88b37
+}

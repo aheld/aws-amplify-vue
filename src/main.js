@@ -19,7 +19,7 @@ import router from './router'
 import Vuetify from 'vuetify'
 import 'vuetify/dist/vuetify.min.css'
 
-import Amplify, { Auth, Logger } from 'aws-amplify'
+import Amplify, { Auth, Logger, API } from 'aws-amplify'
 import aws_exports from './aws-exports'
 import GoogleAuth from 'vue-google-auth'
 import googleConf from './google-exports'
